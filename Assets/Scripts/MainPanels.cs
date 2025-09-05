@@ -16,8 +16,10 @@ public class MainPanels : MonoBehaviour
     public GameObject _videoQuad;
     public VideoPlayer _videoPlayer;
     public RectTransform _rectTransform;
+    public float _animationDelay;
     bool firstTime;
     Vector2 _orignalPosition;
+    public ParticleSystem _particalEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class MainPanels : MonoBehaviour
         _openBtn.onClick.AddListener(OpenBtnClick);
         _backBtn.onClick.AddListener(BackBtnClick);
         _frameImage.sprite = _normalFrame;
-        _rectTransform.DOAnchorPosY(_orignalPosition.y + 0.15f, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        //_rectTransform.DOAnchorPosY(_orignalPosition.y + 0.15f, 1f).SetDelay(_animationDelay).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
     void OpenBtnClick()
@@ -37,14 +39,18 @@ public class MainPanels : MonoBehaviour
         _backBtn.gameObject.SetActive(true);
         _openBtn.gameObject.SetActive(false);
         OnOffSidePanel(true);
+        _particalEffect.Play();
     }
 
     void BackBtnClick()
     {
-        UIPanelManager.Instance.AllOnOffPanel(true);
         _openBtn.gameObject.SetActive(true);
         _backBtn.gameObject.SetActive(false);
-        OnOffSidePanel(false);
+        for (int i = 0; i < _sidePanel.Count; i++)
+        {
+            _sidePanel[i].OffAnimationPanel();
+        }
+        _particalEffect.Play();
     }
 
     void OnOffSidePanel(bool State)
@@ -54,6 +60,7 @@ public class MainPanels : MonoBehaviour
             _sidePanel[i].gameObject.SetActive(State);
         }
     }
+
 
     private void Update()
     {

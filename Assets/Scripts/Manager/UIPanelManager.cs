@@ -9,7 +9,7 @@ public class UIPanelManager : Singleton<UIPanelManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void AllOnOffPanel(bool state)
@@ -18,6 +18,7 @@ public class UIPanelManager : Singleton<UIPanelManager>
         {
             _allSamePanel[i].gameObject.SetActive(state);
         }
-        
+
     }
+
 }
