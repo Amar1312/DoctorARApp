@@ -27,19 +27,20 @@ public class MainPanels : MonoBehaviour
         _orignalPosition = _rectTransform.anchoredPosition;
         OnOffSidePanel(false);
         _openBtn.onClick.AddListener(OpenBtnClick);
-        _backBtn.onClick.AddListener(BackBtnClick);
+        //_backBtn.onClick.AddListener(BackBtnClick);
         _frameImage.sprite = _normalFrame;
         //_rectTransform.DOAnchorPosY(_orignalPosition.y + 0.15f, 1f).SetDelay(_animationDelay).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
     }
 
     void OpenBtnClick()
     {
+        UIPanelManager.Instance._mainVideoPanel._videoPlayer.clip = _videoPlayer.clip;
+       //_particalEffect.Play();
+        UIPanelManager.Instance._mainVideoPanel.OpenMainVideo();
+        _frameImage.sprite = _normalFrame;
+        _videoQuad.SetActive(false);
+        _videoPlayer.Stop();
         UIPanelManager.Instance.AllOnOffPanel(false);
-        this.gameObject.SetActive(true);
-        _backBtn.gameObject.SetActive(true);
-        _openBtn.gameObject.SetActive(false);
-        OnOffSidePanel(true);
-        _particalEffect.Play();
     }
 
     void BackBtnClick()

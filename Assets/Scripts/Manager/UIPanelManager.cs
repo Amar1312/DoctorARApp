@@ -6,6 +6,8 @@ using Jaimin;
 public class UIPanelManager : Singleton<UIPanelManager>
 {
     public List<MainPanels> _allSamePanel;
+    public GameObject _mainImage;
+    public MainVideoPanel _mainVideoPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class UIPanelManager : Singleton<UIPanelManager>
         {
             _allSamePanel[i].gameObject.SetActive(state);
         }
-
+        //_mainImage.SetActive(state);
     }
 
 }
