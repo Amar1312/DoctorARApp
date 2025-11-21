@@ -48,7 +48,7 @@ MonoBehaviour:
   Screeshot: {fileID: 7221804578565517529}
   _image: {fileID: 7221804578925238108}
   _DeactiveCanvas: []
-  _Button: {fileID: 0}
+  ss: {fileID: 0}
   SsBackground: {fileID: 0}
   _timeToDisplaySS: 0.4
 --- !u!1 &7221804578565517529

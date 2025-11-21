@@ -224,7 +224,7 @@ namespace Amar
             }
             _scalePanel.SetActive(true);
             _objSelectionPanel.SetActive(false);
-            arTap.RemoveObjReference();
+            //arTap.RemoveObjReference();
             arTap.HideObject = true;
             //arTap._placeButton.gameObject.SetActive(false);
         }

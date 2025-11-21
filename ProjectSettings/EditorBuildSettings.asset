@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Ai Demo.unity
+    guid: 2059b4b17313c6649a4b6629c01df118
+  - enabled: 0
+    path: Assets/SpeechAndText/Sample/SampleSpeechToText.unity
+    guid: d9447599b4cad0245ac00fa552c354b6
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d30cb5d4b4129ec429042fa20f1629b9, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: fe227053059cc3b43827d52ed7dcfc66, type: 2}

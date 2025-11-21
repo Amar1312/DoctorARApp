@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 7954413924180880810, guid: feb8b4057edb0484eb53132e0f33a22d, type: 3}
+      propertyPath: m_Size.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954413924180880810, guid: feb8b4057edb0484eb53132e0f33a22d, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107,6 +115,14 @@ PrefabInstance:
     - target: {fileID: 273857529551271791, guid: c52b2c9a0dddd2c4b9844d34d6526627, type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534717425823647364, guid: c52b2c9a0dddd2c4b9844d34d6526627, type: 3}
+      propertyPath: m_Size.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534717425823647364, guid: c52b2c9a0dddd2c4b9844d34d6526627, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 8412553095712065139, guid: c52b2c9a0dddd2c4b9844d34d6526627, type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,6 +182,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3385135407876761425}
     m_Modifications:
+    - target: {fileID: 2620615495411219395, guid: 9b30c3fb73309d44daf3dfa1caf24565, type: 3}
+      propertyPath: m_Size.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620615495411219395, guid: 9b30c3fb73309d44daf3dfa1caf24565, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2746381649547363396, guid: 9b30c3fb73309d44daf3dfa1caf24565, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.81
