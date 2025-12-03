@@ -40,7 +40,7 @@ public class SphereFollow : MonoBehaviour
                 //Debug.Log("changing pos");
                 _spherePoint.GetComponentInParent<CubeFollow>().SetRobotPos();
                 changingpos = true;
-
+                Debug.Log("this rotation2");
                 //var Lookat1 = Quaternion.LookRotation(Camera.main.transform.forward);
                 //Lookat1.x = 0;
                 //Lookat1.z = 0;
@@ -59,6 +59,7 @@ public class SphereFollow : MonoBehaviour
                     changingpos = false;
                     _back = false;
                     this.transform.rotation = _spherePoint.transform.rotation;
+                    Debug.Log("this rotation1");
                     //this.transform.rotation = Vector3.RotateTowards(this.transform.rotation, _spherePoint.transform.rotation, 1f,1f);
                 }
                 else
@@ -102,7 +103,7 @@ public class SphereFollow : MonoBehaviour
 
             if (this.transform.position == follow)
             {
-                var Lookat = Quaternion.LookRotation(-Camera.main.transform.forward);
+                var Lookat = Quaternion.LookRotation(Camera.main.transform.forward);
                 Lookat.x = 0;
                 Lookat.z = 0;
                 this.transform.rotation = Lookat;

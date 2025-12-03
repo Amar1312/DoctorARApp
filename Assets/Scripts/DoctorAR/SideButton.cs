@@ -24,7 +24,9 @@ public class SideButton : MonoBehaviour
 
     void MeBtnClick()
     {
+        AudioManager.Instance._buttonIndex = _meIndex;
         _mainPanel.SetClickData(_titleText, _mainPanelText, _meIndex);
+        AudioManager.Instance.SetClipNumber(4);
         if (_clickEffect != null)
         {
             _clickEffect.SetActive(true);

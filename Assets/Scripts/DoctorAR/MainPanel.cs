@@ -15,9 +15,10 @@ public class MainPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string Data = "Wow what fun, you can watch an interactive holographic interface from any direction, you can get as close and far-reaching as you choose, and feel it appearing in front of you in the real world. " +
-        "Click on each of the IMA's areas of activity and I will provide you with information about them, so that you understand how much it is worth to be part of the Israel Medical Association.";
-        SpeechRobot.Instance.StartSpach(Data);
+        //string Data = "Wow what fun, you can watch an interactive holographic interface from any direction, you can get as close and far-reaching as you choose, and feel it appearing in front of you in the real world. " +
+        //"Click on each of the IMA's areas of activity and I will provide you with information about them, so that you understand how much it is worth to be part of the Israel Medical Association.";
+        //SpeechRobot.Instance.StartSpach(Data);
+        AudioManager.Instance.SetClipNumber(3);
         _sperefollw.NearpointSet(_robotPoint.position);
     }
 

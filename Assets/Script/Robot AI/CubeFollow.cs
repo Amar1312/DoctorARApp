@@ -45,5 +45,6 @@ Camera.main.transform.position.z);
         Lookat.x = 0;
         Lookat.z = 0;
         this.transform.rotation = Lookat;
+        Debug.Log("this rotation 12");
     }
 }

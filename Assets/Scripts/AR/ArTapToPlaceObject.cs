@@ -63,12 +63,12 @@ public class ArTapToPlaceObject : MonoBehaviour
         arRaycastManager = FindObjectOfType<ARRaycastManager>();
         _placeButton.onClick.AddListener(Placeobject);
 
-#if UNITY_EDITOR
-        Placeobject();
-        _parentObject.SetActive(true);
-        _parentObject.transform.position = placementPose.position;
-        _parentObject.transform.forward = placementPose.forward;
-#endif
+//#if UNITY_EDITOR
+//        Placeobject();
+//        _parentObject.SetActive(true);
+//        _parentObject.transform.position = placementPose.position;
+//        _parentObject.transform.forward = placementPose.forward;
+//#endif
     }
 
     void Update()

@@ -21,21 +21,23 @@ public class HomePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string Data = "Welcome to the Israel Medical Association AI version, you are about to experience a first-of-its-kind holographic experience in which you can learn about the IMA and understand how important it is to be part of the medical community in Israel. Here are all the benefits and all the benefits";
+        //string Data = "Welcome to the Israel Medical Association AI version, you are about to experience a first-of-its-kind holographic experience in which you can learn about the IMA and understand how important it is to be part of the medical community in Israel. Here are all the benefits and all the benefits";
         _playBtn.onClick.AddListener(PlayBtnClick);
         _urlBtn.onClick.AddListener(UrlBtnClick);
-        SpeechRobot.Instance.StartSpach(Data);
+        //SpeechRobot.Instance.StartSpach(Data);
+        AudioManager.Instance.SetClipNumber(0);
     }
 
 
     void PlayBtnClick()
     {
-        //    _insPanel.SetActive(true);
-        
+
         //TextToSpeech.Instance.StopSpeak();
-        SpeechRobot.Instance._isScanning = true;
-        string FirstData = "I'll explain to you how to start the experience, look around you through the camera, choose a suitable place and get close to it, scan the ground by moving the phone to the right and left slowly";
-        SpeechRobot.Instance.StartSpach(FirstData);
+        AudioManager.Instance._isScanning = true;
+        //string FirstData = "I'll explain to you how to start the experience, look around you through the camera, choose a suitable place and get close to it, scan the ground by moving the phone to the right and left slowly";
+        //SpeechRobot.Instance.StartSpach(FirstData);
+
+        AudioManager.Instance.SetClipNumber(1);
         _gameCanvas.SetActive(true);
         _arCamera.SetActive(true);
         Invoke(nameof(Off), 0.5f);
