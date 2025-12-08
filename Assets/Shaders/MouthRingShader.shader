@@ -5,7 +5,7 @@ Shader "Custom/MouthRing" {
         _Smoothness ("Smoothness", Range(0, 0.5)) = 0.05
         _Intensity ("Intensity", Range(0, 1)) = 0.5
         _MinRadius ("Min Radius", Range(0, 1)) = 0.3
-        _MaxRadius ("Max Radius", Range(0, 1)) = 0.9
+        _MaxRadius ("Max Radius", Range(0, 1)) =0.5
         _MaxBrightness ("Max Brightness", Range(1, 5)) = 2.0
     }
     
@@ -52,7 +52,7 @@ float4 frag (v2f i) : SV_Target {
     float dist = length(uv);
     
     // Map intensity to radius range
-    float radius = lerp(_MinRadius, _MaxRadius, _Intensity);
+    float radius = lerp(_MinRadius, _MaxRadius, _Intensity/2);
     
     // Create ring with smooth edges
     float ring = smoothstep(_RingWidth + _Smoothness, _RingWidth, abs(dist - radius));
