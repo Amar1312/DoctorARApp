@@ -18,6 +18,8 @@ public class AudioManager : Singleton<AudioManager>
 
     public int _buttonIndex;
     public List<AudioClip> _buttonClickAudio;
+    public Coroutine _playSound;
+    public IEnumerator _sound;
 
 
     // Start is called before the first frame update
@@ -28,20 +30,28 @@ public class AudioManager : Singleton<AudioManager>
 
     public void SetClipNumber(int Index)
     {
+        CancelInvoke(nameof(OffRotation));
+        if (_playSound != null)
+        {
+            StopCoroutine(_playSound);
+            _playSound = null;
+            Debug.Log("stop ");
+        }
+
         if (Index == 0)
         {
-            _homeRobotAnimator.SetBool("Hello", true);
-            StartCoroutine(PlayAudio(Index, 3f));
+            _homeRobotAnimator.SetBool("Hello", true);       
+            _playSound = StartCoroutine(PlayAudio(Index, 3f));
         }
-        else if(Index == 1)
+        else if (Index == 1)
         {
             _homeRobotAnimator.SetBool("Dance0", true);
-            StartCoroutine(PlayAudio(Index, 3f));
+            _playSound = StartCoroutine(PlayAudio(Index, 3f));
         }
         else
-           //_robotAnimator.SetBool
-            StartCoroutine(PlayAudio(Index, 0f));
-
+        {
+            _playSound = StartCoroutine(PlayAudio(Index, 0f));
+        }
 
         //PlayAudio(Index);
 
@@ -51,17 +61,23 @@ public class AudioManager : Singleton<AudioManager>
     {
         yield return new WaitForSeconds(wait);
         SetCharacterNormal();
-        CancelInvoke(nameof(PlayButtonSound));
+        //CancelInvoke(nameof(PlayButtonSound));
         float duration = _audioClip[Index].length;
         Debug.Log(duration + " Time");
         Invoke(nameof(OffRotation), duration);
 
-        _audioSource.clip = _audioClip[Index];
-        _audioSource.Play();
+
         if (Index == 4)
         {
-            Invoke(nameof(PlayButtonSound), duration + 1f);
+            PlayButtonSound();
+            //Invoke(nameof(PlayButtonSound), duration + 1f);
         }
+        else
+        {
+            _audioSource.clip = _audioClip[Index];
+            _audioSource.Play();
+        }
+
     }
 
     public void PlayButtonSound()

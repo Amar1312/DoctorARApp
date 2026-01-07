@@ -81,11 +81,11 @@ public class SphereFollow : MonoBehaviour
 
             else
             {
-              
-                //var Lookat = Quaternion.LookRotation(Camera.main.transform.forward);
-                //Lookat.x = 0;
-                //Lookat.z = 0;
-                //this.transform.rotation = Lookat;
+
+                var Lookat = Quaternion.LookRotation(Camera.main.transform.forward);
+                Lookat.x = 0;
+                Lookat.z = 0;
+                this.transform.rotation = Lookat;
             }
 
 
